@@ -1,0 +1,49 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: default;
+
+  &__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    color: #001d4a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    color: #4a5568;
+    font-size: 0.95rem;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Variantes reutilizables */
+  &--primary {
+    background-color: #0a4da2;
+    color: #fff;
+
+    .card__title {
+      color: #fff;
+    }
+
+    .card__description {
+      color: #e4e8f0;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid #001d4a;
+  }
+}

@@ -1,0 +1,54 @@
+.cards-section {
+  width: 100%;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  background-color: #f6f9fe;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  transition: all 0.3s ease;
+
+  /* Capa interna opcional para limitar el ancho visual sin cortar el fondo */
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px; /* controla el ancho máximo visible */
+    margin: 0 auto; /* centra las cards dentro del ancho total */
+    width: 100%;
+  }
+
+  .card {
+    flex: 1 1 200px; /* más estrechas */
+    max-width: 250px; /* límite de ancho menor */
+    min-height: 180px;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    padding: 2rem;
+    gap: 1.5rem;
+
+    .card {
+      max-width: 220px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+
+    .cards-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      max-width: 100%;
+    }
+  }
+}
