@@ -8,8 +8,13 @@
   cursor: default;
 
   &__icon {
-    font-size: 2rem;
     margin-bottom: 1rem;
+    
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
   }
 
   &__title {
@@ -21,11 +26,6 @@
   &__description {
     color: #4a5568;
     font-size: 0.95rem;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   }
 
   /* Variantes reutilizables */

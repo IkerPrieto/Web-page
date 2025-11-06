@@ -1,35 +1,9 @@
 import Card from "../Card/Card";
 import "../../styles/layout/cardSection.scss";
 
-const CardsSection = () => {
-  const cards = [
-    {
-      title: "Tienda online",
-      description:
-        "Mauris et turpis tellus. Nullam facilisis, arcu quis lobortis gravida.",
-    },
-    {
-      title: "Administración pública",
-      description:
-        "Mauris et turpis tellus. Nullam facilisis, arcu quis lobortis gravida.",
-
-    },
-    {
-      title: "Fabricamos a medida",
-      description:
-        "Mauris et turpis tellus. Nullam facilisis, arcu quis lobortis gravida.",
-
-    },
-    {
-      title: "Digitalización accesible",
-      description:
-        "Mauris et turpis tellus. Nullam facilisis, arcu quis lobortis gravida.",
-
-    },
-  ];
-
+const CardsSection = ({ cards = [], className = "" }) => {
   return (
-    <section className="cards-section">
+    <section className={`cards-section ${className}`}>
       <div className="cards-wrapper">
         {cards.map((card, index) => (
           <Card

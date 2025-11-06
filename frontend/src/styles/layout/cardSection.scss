@@ -1,53 +1,60 @@
 .cards-section {
   width: 100%;
-  padding: 3rem 2rem;
+  padding: 3rem 4rem;
   box-sizing: border-box;
   background-color: #f6f9fe;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 1rem;
   transition: all 0.3s ease;
 
-  /* Capa interna opcional para limitar el ancho visual sin cortar el fondo */
   .cards-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between; 
     gap: 2rem;
-    max-width: 1200px; /* controla el ancho máximo visible */
-    margin: 0 auto; /* centra las cards dentro del ancho total */
-    width: 100%;
+    width: 100%; 
+    max-width: 1600px; 
+    margin: 0 auto;
   }
 
   .card {
-    flex: 1 1 200px; /* más estrechas */
-    max-width: 250px; /* límite de ancho menor */
+    flex: 1 1 180px;
+    max-width: 250px; 
     min-height: 180px;
     text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 6px 6px 0px rgba(0, 12, 33, 0.8);
+    }
   }
 
   @media (max-width: 900px) {
-    padding: 2rem;
-    gap: 1.5rem;
+    padding: 2rem 3rem;
+
+    .cards-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
 
     .card {
-      max-width: 220px;
+      flex: 1 1 160px;
     }
   }
 
   @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-
+    padding: 1.5rem 2rem;
+    
     .cards-wrapper {
-      flex-direction: column;
-      align-items: center;
+      width: 100%;
     }
 
     .card {
+      flex: 1 1 100%;
       max-width: 100%;
     }
   }
