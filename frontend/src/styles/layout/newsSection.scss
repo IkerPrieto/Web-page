@@ -1,6 +1,6 @@
 .news-section {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 1rem 1rem;
   background-color: #f6f9fe;
   font-family: "Inter", sans-serif;
   overflow: visible;
@@ -38,7 +38,7 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     align-items: center;
     min-height: 400px;
 

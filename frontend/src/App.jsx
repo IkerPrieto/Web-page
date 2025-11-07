@@ -8,6 +8,7 @@ import { newsMock } from './components/Mockups/newsMock.js';
 import NewsSection from './components/NewsSection/NewsSection.jsx';
 import ConsultoresAccesibilidad from './components/ConsultoresAccesibilidad/ConsultoresAccesibilidad.jsx';
 import Productos from './components/Productos/Productos.jsx';
+import { accesibilidadMock } from './components/Mockups/accesibilidadMock.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <CardsSection title="Servicios" cards={serviciosMock} />
       <ConsultoresAccesibilidad />
       <Productos title="Productos" cards={productosMock} />
+      <NewsSection title="Productos de accesibilidad universal" items={accesibilidadMock} />
     </>
   )
 }
