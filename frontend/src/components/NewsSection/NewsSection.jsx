@@ -61,7 +61,8 @@ const NewsSection = ({
       if (e.button !== 0) return; // solo botón izquierdo
       isDragging = true;
       el.classList.add("dragging");
-      startX = e.pageX - el.offsetLeft;
+      const rect = el.getBoundingClientRect();
+      startX = e.pageX - rect.left;
       scrollLeft = el.scrollLeft;
     };
 
@@ -80,21 +81,56 @@ const NewsSection = ({
     const onMouseMove = (e) => {
       if (!isDragging) return;
       e.preventDefault(); // evita seleccionar texto
-      const x = e.pageX - el.offsetLeft;
-      const walk = (x - startX) * 1.2; // velocidad del arrastre
+      const rect = el.getBoundingClientRect();
+      const x = e.pageX - rect.left;
+      const walk = (x - startX) * 0.8; // velocidad del arrastre (reducida para suavidad)
       el.scrollLeft = scrollLeft - walk;
+    };
+
+    // Soporte para touch events (móviles)
+    const onTouchStart = (e) => {
+      isDragging = true;
+      el.classList.add("dragging");
+      const touch = e.touches[0];
+      const rect = el.getBoundingClientRect();
+      startX = touch.pageX - rect.left;
+      scrollLeft = el.scrollLeft;
+    };
+
+    const onTouchMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = el.getBoundingClientRect();
+      const x = touch.pageX - rect.left;
+      const walk = (x - startX) * 0.8;
+      el.scrollLeft = scrollLeft - walk;
+    };
+
+    const onTouchEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      el.classList.remove("dragging");
     };
 
     el.addEventListener("mousedown", onMouseDown);
     el.addEventListener("mouseleave", onMouseLeave);
     el.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
+    
+    // Touch events para móviles
+    el.addEventListener("touchstart", onTouchStart, { passive: false });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd);
 
     return () => {
       el.removeEventListener("mousedown", onMouseDown);
       el.removeEventListener("mouseleave", onMouseLeave);
       el.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseup", onMouseUp);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
     };
   }, []);
 
@@ -107,6 +143,7 @@ const NewsSection = ({
           {items.map((item, idx) => (
             <article
               key={item.id || idx}
+              title={item.title}
               className={`news-card ${idx === activeIndex ? "is-active" : ""}`}
               role="listitem"
             >

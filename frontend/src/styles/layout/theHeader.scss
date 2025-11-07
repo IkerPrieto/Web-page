@@ -5,6 +5,7 @@ $header-height: 122px;
 $button-bg: #0066cc;
 
 .theheader {
+    position: fixed;
     background-color: $header-bg;
     width: 100%;
     height: $header-height;
@@ -13,19 +14,59 @@ $button-bg: #0066cc;
     left: 0;
     right: 0;
     z-index: 1000;
+    border: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: 0;
+    box-shadow: none;
 
     &__container {
+        max-width: 100%;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         height: 100%;
         gap: 15px;
+        box-sizing: border-box;
+        padding: 0 20px;
+        overflow-x: hidden;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 0 0 auto;
+    }
+
+    &__hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $header-text;
+        padding: 0.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__logo-img {
         max-height: 66px;
         width: 223px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
     }
 
     &__nav-list {
@@ -35,6 +76,7 @@ $button-bg: #0066cc;
         list-style: none;
         margin: 0;
         padding: 0;
+        flex-wrap: wrap;
     }
 
     &__nav-item {
@@ -114,8 +156,9 @@ $button-bg: #0066cc;
 
     .search__container {
         position: relative;
-        flex: 1;
-        max-width: 500px;
+        flex: 0 0 auto;
+        max-width: 200px;
+        min-width: 40px;
 
         .search__icon {
             position: absolute;
@@ -141,18 +184,175 @@ $button-bg: #0066cc;
         }
     }
 
-    // Responsive
-    @media (max-width: 768px) {
+    // Responsive - Tablet
+    @media (max-width: 1024px) {
+        border: 0;
+        border-bottom: 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        outline: 0;
+        box-shadow: none;
+
         &__container {
-            flex-direction: column;
-            gap: 1rem;
-            padding: 0 20px;
+            padding: 0 15px;
+            gap: 10px;
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &__top {
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &__nav {
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &__logo-img {
+            max-width: 180px;
+            width: auto;
         }
 
         &__nav-list {
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        &__nav-item {
+            a p {
+                font-size: 13px;
+            }
+        }
+
+        .contactar__button,
+        .tienda__button {
+            padding: 0.4rem 0.7rem;
+            font-size: 0.8rem;
+            
+            p {
+                font-size: 0.8rem;
+            }
+        }
+
+        .search__container {
+            max-width: 120px;
+            min-width: 40px;
+        }
+    }
+
+    // Responsive - Mobile
+    @media (max-width: 768px) {
+        height: auto;
+        min-height: $header-height;
+        padding: 1rem 0;
+        border: 0;
+        border-bottom: 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        outline: 0;
+        box-shadow: none;
+
+        &__container {
+            flex-direction: column;
+            gap: 0;
+            padding: 0 20px;
+            height: auto;
+            overflow-x: visible;
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &__top {
+            width: 100%;
+            padding-bottom: 1rem;
+            flex: 1 1 100%;
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &__hamburger {
+            display: block;
+        }
+
+        &__logo-img {
+            max-width: 180px;
+        }
+
+        &__nav {
+            flex: 1 1 100%;
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            width: 100%;
+            border: 0;
+            border-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            outline: 0;
+            box-shadow: none;
+
+            &--open {
+                max-height: 1000px;
+            }
+        }
+
+        &__nav-list {
+            flex-direction: column;
+            align-items: flex-start;
             gap: 1rem;
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        &__nav-item {
+            width: 100%;
+
+            a {
+                width: 100%;
+                display: block;
+                padding: 0.5rem 0;
+            }
+        }
+
+        .contactar__button,
+        .tienda__button {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .search__container {
+            width: 100%;
+            max-width: 100%;
         }
     }
 }

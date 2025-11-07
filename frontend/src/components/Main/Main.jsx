@@ -1,6 +1,6 @@
 import '../../styles/layout/main.scss';
 import ilustracion from '../../assets/Main/Ilustracion.png';
-import rectangulo from '../../assets/Main/Rectangle 4308.png';
+import rectangulo from '../../assets/Main/blueRectangle.png';
 import { MoveRight } from 'lucide-react';
 
 const Main = () => {

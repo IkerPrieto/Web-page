@@ -5,6 +5,7 @@ import { serviciosMock } from './components/Mockups/serviciosMock.js';
 import CardsSection from './components/CardSection/CardSection.jsx';
 import { newsMock } from './components/Mockups/newsMock.js';
 import NewsSection from './components/NewsSection/NewsSection.jsx';
+import ConsultoresAccesibilidad from './components/ConsultoresAccesibilidad/ConsultoresAccesibilidad.jsx';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Main />
       <CardsSection cards={cardSectionMock} />
       <NewsSection title="Conoce las últimas novedades de Puntodis" items={newsMock} />
-      <CardsSection cards={serviciosMock} />
+      <CardsSection title="Servicios" cards={serviciosMock} />
+      <ConsultoresAccesibilidad />
     </>
   )
 }
