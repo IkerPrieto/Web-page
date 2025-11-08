@@ -1,4 +1,4 @@
-import '../../styles/layout/theheader.scss';
+import '../../styles/layout/theHeader.scss';
 import { useState } from "react";
 import logo from '../../assets/TheHeader/logotipoo.svg';
 import { ShoppingCart, Search, Menu, X } from 'lucide-react';
