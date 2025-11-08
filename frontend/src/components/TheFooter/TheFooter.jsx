@@ -1,4 +1,4 @@
-import "../../styles/layout/TheFooter.scss";
+import "../../styles/layout/theFooter.scss";
 
 import bizkaia from "../../assets/TheFooter/Top/bizkaia.svg";
 import bbva from "../../assets/TheFooter/Top/bbva.svg";
