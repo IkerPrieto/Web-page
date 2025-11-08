@@ -42,29 +42,26 @@
     align-items: center;
     min-height: 400px;
 
-    /* asegura el mismo comportamiento en ambos extremos */
     scroll-padding-left: 2rem;
     scroll-padding-right: 2rem;
 
-    /* oculta el scroll */
     &::-webkit-scrollbar {
       display: none;
     }
 
-    /* 🧠 agregado: soporte para drag con click */
     cursor: grab;
     cursor: -webkit-grab;
-    user-select: none; /* evita selección de texto */
+    user-select: none;
 
     &.dragging {
       cursor: grabbing;
       cursor: -webkit-grabbing;
-      scroll-behavior: auto; /* evita snapping durante el arrastre */
+      scroll-behavior: auto; 
     }
   }
 }
 
-/* ---- Tarjetas ---- */
+/* ---- Cards ---- */
 .news-card {
   background: #ffffff;
   border-radius: 16px;
@@ -114,7 +111,7 @@
   }
 }
 
-/* ---- Card activa ---- */
+/* ---- Active Card ---- */
 .news-card.is-active {
   position: relative;
   z-index: 60;
@@ -122,7 +119,7 @@
   margin-inline: 3rem;
 }
 
-/* ---- Navegación ---- */
+/* ---- Navigation ---- */
 .news-section__nav {
   position: absolute;
   top: 50%;
@@ -153,7 +150,9 @@
   right: -22px;
 }
 
-/* ---- Responsividad ---- */
+
+
+/* ---- Responsive ---- */
 @media (min-width: 640px) {
   .news-card {
     flex-basis: calc(35% - 1rem);

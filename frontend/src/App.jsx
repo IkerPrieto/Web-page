@@ -9,6 +9,7 @@ import NewsSection from './components/NewsSection/NewsSection.jsx';
 import ConsultoresAccesibilidad from './components/ConsultoresAccesibilidad/ConsultoresAccesibilidad.jsx';
 import Productos from './components/Productos/Productos.jsx';
 import { accesibilidadMock } from './components/Mockups/accesibilidadMock.js';
+import TheFooter from './components/TheFooter/TheFooter.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <ConsultoresAccesibilidad />
       <Productos title="Productos" cards={productosMock} />
       <NewsSection title="Productos de accesibilidad universal" items={accesibilidadMock} />
+      <TheFooter />
     </>
   )
 }

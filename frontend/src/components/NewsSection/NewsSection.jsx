@@ -8,7 +8,7 @@ const NewsSection = ({
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // 🔹 Detecta qué card está centrada
+  // Active card detection
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -48,7 +48,7 @@ const NewsSection = ({
     };
   }, []);
 
-  // 🔹 Scroll horizontal solo con click y arrastre
+  // Horizontal Scroll
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -58,7 +58,7 @@ const NewsSection = ({
     let scrollLeft = 0;
 
     const onMouseDown = (e) => {
-      if (e.button !== 0) return; // solo botón izquierdo
+      if (e.button !== 0) return; 
       isDragging = true;
       el.classList.add("dragging");
       const rect = el.getBoundingClientRect();
@@ -80,14 +80,14 @@ const NewsSection = ({
 
     const onMouseMove = (e) => {
       if (!isDragging) return;
-      e.preventDefault(); // evita seleccionar texto
+      e.preventDefault();
       const rect = el.getBoundingClientRect();
       const x = e.pageX - rect.left;
-      const walk = (x - startX) * 0.8; // velocidad del arrastre (reducida para suavidad)
+      const walk = (x - startX) * 0.8;
       el.scrollLeft = scrollLeft - walk;
     };
 
-    // Soporte para touch events (móviles)
+    // Support for touch events (mobiles)
     const onTouchStart = (e) => {
       isDragging = true;
       el.classList.add("dragging");
@@ -118,7 +118,7 @@ const NewsSection = ({
     el.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
     
-    // Touch events para móviles
+    // Touch events for mobiles
     el.addEventListener("touchstart", onTouchStart, { passive: false });
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd);
@@ -160,7 +160,7 @@ const NewsSection = ({
                         {item.category}
                       </span>
                     )}
-                    <h3 className="news-card__title">{item.title}</h3>
+                    <h2 className="news-card__title">{item.title}</h2>
                   </div>
                 )}
               </div>

@@ -50,22 +50,22 @@
         }
 
         .main__btn {
-            display: flex; 
-            align-items: center; 
-            gap: 0.5rem; 
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             background-color: #e4082e;
             color: #fff;
             border: none;
-            padding: 0.6rem 1.2rem; 
+            padding: 0.6rem 1.2rem;
             border-radius: 999px;
-            font-size: 0.95rem; 
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
 
             &:hover {
                 background-color: #b80725;
-                transform: translateY(-2px); 
+                transform: translateY(-2px);
             }
 
             p {
@@ -110,9 +110,12 @@
         }
     }
 
-    /* 📱 Responsividad */
+
+
+    /* 📱 Responsive */
     @media (max-width: 1200px) {
         .main__image {
+            align-items: center;
             width: 45%;
         }
     }

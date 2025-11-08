@@ -106,7 +106,7 @@ $button-bg: #0066cc;
         padding: 0.5rem 1rem;
         border: none;
         border-radius: 20px;
-        background: rgb(232, 29, 29);
+        background: #e60023;
         color: white;
         cursor: pointer;
         display: flex;
@@ -184,6 +184,8 @@ $button-bg: #0066cc;
         }
     }
 
+
+    
     // Responsive - Tablet
     @media (max-width: 1024px) {
         border: 0;
